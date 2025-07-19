@@ -35,7 +35,7 @@ average = st.number_input("⛽ Fuel Average (km/l)", min_value=5.0, max_value=30
 fuel_type = st.selectbox("🛢️ Fuel Type", ['Petrol', 'Diesel'])
 transmission = st.selectbox("⚙️ Transmission Type", ['Automatic', 'Manual', 'Semi-Auto'])
 model_car = st.selectbox("Car Model", ['Edge', 'Fiesta', 'Focus', 'Galaxy', 'KA', 'Ka+',
-                                       'Kuga', 'S-MAX'])  # include spaces if used in training
+                                       'Kuga', 'S-MAX'])  
 
 
 if st.button("💸 Predict Price"):
