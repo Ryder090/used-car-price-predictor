@@ -71,14 +71,16 @@ if st.button("💸 Predict Price"):
 
     prediction = model.predict(input_df)[0]
 
-   
-    st.markdown(
-        f"<div style='background-color:#e3f2fd; padding: 20px; border-radius: 10px; text-align:center;'>"
-        f"<h2 style='color: #1e88e5;'>💰 Estimated Car Price: ₹{int(prediction):,}</h2>"
-        f"</div>",
-        unsafe_allow_html=True
-    )
 
+    if prediction < 0:
+        st.warning("🚗 The car seems very old or uncommon. Unable to estimate an accurate price.")
+    else:
+        st.markdown(
+            f"<div style='background-color:#e3f2fd; padding: 20px; border-radius: 10px; text-align:center;'>"
+            f"<h2 style='color: #1e88e5;'>💰 Estimated Car Price: ₹{int(prediction):,}</h2>"
+            f"</div>",
+            unsafe_allow_html=True
+        )
 
 st.markdown("---")
 st.markdown(
